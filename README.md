@@ -6,7 +6,7 @@ Nama Kelompok: Clover <br>
 - Agung Soemantri - 173040100
 - Dae Gi Hong - 173040084
 - Fakhri Eka Nugraha - 173040101
-- Firman Aghanie - 173040109
+- Firman Aghanie Nurjaman- 173040109
 
 Detail Folder:<br>
 - master: merupakan repository untuk versi akhir dari website yang dibuat dengan fitur dan coding laravel yang optimal

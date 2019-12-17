@@ -1,88 +1,60 @@
-<!DOCTYPE html>
-<html>
+@extends('main')
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title', 'Hefa Computer')
+@section('iniIsi')
 
-    <title>Landing - Free Bulma template</title>
-    
-    <link rel="shortcut icon" href="{{ asset('mages/fav_icon.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    
-    <!-- Bulma Version 0.8.x-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}">
-</head>
-
-<body>
-    <section class="hero is-info is-fullheight">
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="{{ url('/') }}">
-                            <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo">
-                        </a>
-                        <span class="navbar-burger burger" data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
+<div class="iniIsi">
+    <div class="container">
+        <div id="flow">
+            <span class="flow-1"></span>
+            <span class="flow-2"></span>
+            <span class="flow-3"></span>
+        </div>
+        <div class="section">
+            <div class="box">
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input class="input has-text-centered" type="search" placeholder="--- Find Product You Need ---">
                     </div>
-                    <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="{{ url('/') }}">
-                                    <span class="icon">
-                                        <i class="fa fa-home"></i>
-                                    </span>
-                                    <span>Home</span>
-                                </a>
-                            </span>
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="{{ url('/admin') }}">
-                                    <span class="icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span>Admin</span>
-                                </a>
-                            </span>
-                        </div>
+                    <div class="control">
+                        <a class="button is-info">Search</a>
                     </div>
                 </div>
-            </nav>
             </div>
-
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
-                        <h1 class="title">
-                            Coming Soon
-                        </h1>
-                        <h2 class="subtitle">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam consectetur, quaerat illum corporis, rerum autem esse totam temporibus odit porro neque minima. Nostrum voluptate nulla magni earum quaerat fugit quam.
-                        </h2>
-                        <div class="box">
-                            <div class="field is-grouped">
-                                <p class="control is-expanded">
-                                    <input class="input" type="text" placeholder="Enter your email">
-                                </p>
-                                <p class="control">
-                                    <a class="button is-info">
-                                        Notify Me
-                                    </a>
-                                </p>
+            
+            <div class="row columns is-multiline">
+                @foreach( $products as $product )
+                <div class="column is-one-third">
+                    <div class="card large">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="{{ URL::to('/') }}/img/{{ $product->gambar }}" alt="Image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-96x96">
+                                        <img src="{{ URL::to('/') }}/img/{{ $product->gambar }}" alt="Image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4 no-padding">{{ $product->merek }}</p>
+                                    <p><span class="title is-6">
+                                        <a href="">{{ $product->merek }}</a>
+                                         - 
+                                        <a href="">{{ $product->katalog }}</a>
+                                    </span></p>
+                                    <p class="subtitle is-6">Rp {{ number_format($product->harga, 2, ',', '.') }}-</p>
+                                    <a href="{{ url('/detail') }}/{{ $product->id }}" class="button is-link modal-button">Detail</a>
+                                </div>
                             </div>
+                            <p>{{ $product->seri }}</p>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-
-    </section>
-    <script async type="text/javascript" src="{{ asset('js/bulma.js') }}"></script>
-</body>
-
-</html>
+        </div>
+    </div>
+</div>

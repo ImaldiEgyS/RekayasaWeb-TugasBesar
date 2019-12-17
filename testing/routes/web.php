@@ -11,20 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-
-Route::get('/', 'PagesController@home');
-
-Route::get('/admin', 'AdminController@index');
-
-Route::get('/admin/memory', 'MemoryController@index');
-Route::get('/admin/memory/create', 'MemoryController@create');
-Route::post('/admin/memory', 'MemoryController@store');
-
-Route::delete('/admin/memory/{memory}', 'MemoryController@destroy');
-Route::get('/admin/memory/{memory}/update', 'MemoryController@edit');
-Route::patch('/admin/memory/{memory}', 'MemoryController@update');
-
-// Route::resource('memory', ''MemoryController');
+Route::get('/', 'ProductsController@index');
+Route::get('/detail/{product}', 'ProductsController@show');
+Route::get('/login', 'AccountsController@index');
+Route::get('/createmyaccount', 'AccountsController@create');

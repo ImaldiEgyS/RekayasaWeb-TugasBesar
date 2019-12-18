@@ -13,5 +13,6 @@
 
 Route::get('/', 'ProductsController@index');
 Route::get('/detail/{product}', 'ProductsController@show');
-Route::get('/login', 'AccountsController@index');
+
+Auth::routes();
 Route::get('/createmyaccount', 'AccountsController@create');

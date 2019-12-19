@@ -16,3 +16,4 @@ Route::get('/detail/{product}', 'ProductsController@show');
 
 Auth::routes();
 Route::get('/createmyaccount', 'AccountsController@create');
+

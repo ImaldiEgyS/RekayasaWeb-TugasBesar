@@ -6,6 +6,7 @@
     <!-- Custom styles for this template-->
     <link href="http://localhost/wpu-login/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+<title>Register</title>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

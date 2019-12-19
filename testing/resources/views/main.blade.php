@@ -34,8 +34,9 @@
                         <div class="navbar-dropdown">
                             <a class="navbar-item" href="{{ url('/login') }}">Login</a>
                             <a class="navbar-item" href="{{ url('/createmyaccount') }}">Create Account</a>
+                            <a class="navbar-item" href="{{ url('/logout') }}">Logout</a>
                             <hr class="navbar-divider">
-                            <a class="navbar-item">Logout</a>
+                            
                         </div>
                     </div>
                 </div>

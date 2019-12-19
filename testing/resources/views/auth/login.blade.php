@@ -1,85 +1,76 @@
- <!-- Custom fonts for this template-->
- <link href="http://localhost/wpu-login/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+@extends('main')
 
-    <!-- Custom styles for this template-->
-    <link href="http://localhost/wpu-login/assets/css/sb-admin-2.min.css" rel="stylesheet">
+@section('title', 'Login')
+@section('csstambahan', 'login.css')
+@section('iniIsi')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<div class="iniIsi">
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-black">Login</h3>
+                    <div>{{ __('Login') }}</div>
+                    <hr class="login-hr">
+                    <p class="subtitle has-text-black">Please login to proceed.</p>
+                    <div class="box">
+                        <figure class="avatar">
+                            <img src="https://placehold.it/128x128">
+                        </figure>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}">
                         @csrf
+                            <div class="field">
+                                <div class="control">
+                                <label for="email">{{ __('E-Mail Address') }}</label>
+                                    <input class="input is-large @error('email') is-invalid @enderror"  id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Your Email">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
+                                    @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+                            <div class="field">
+                                <div class="control">
+                                <label for="password">{{ __('Password') }}</label>
+                                    <input id="password"  class="input is-large @error('password') is-invalid @enderror" type="password"  name="password" required autocomplete="current-password" placeholder="Your Password">
 
-                                @if (Route::has('password.request'))
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="checkbox" for="remember">
+                  <input type="checkbox" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                  {{ __('Remember Me') }}
+                </label>
+                            </div>
+                            <button class="button is-block is-info is-large is-fullwidth">{{ __('Login') }} <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+
+                            @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                            </div>
-                        </div>
-                    </form>
+                                
+                        </form>
+                    </div>
+                    <p class="has-text-grey">
+                        <a href="../">Sign Up</a> &nbsp;·&nbsp;
+                        <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+                        <a href="../">Need Help?</a>
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
 </div>
-
-    <script src="http://localhost/wpu-login/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="http://localhost/wpu-login/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="http://localhost/wpu-login/assets/js/sb-admin-2.min.js"></script>

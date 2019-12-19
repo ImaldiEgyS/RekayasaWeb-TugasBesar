@@ -27,6 +27,7 @@
             </div>
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
+                    <a class="navbar-item is-hoverable" href="{{ url('/shopping-cart') }}">Shopping Cart</a>
                     <a class="navbar-item is-active" href="{{ url('/') }}">Home</a>
                     <a class="navbar-item">Catalog</a>
                     <div class="navbar-item has-dropdown is-hoverable">

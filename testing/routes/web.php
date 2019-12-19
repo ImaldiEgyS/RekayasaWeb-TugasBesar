@@ -15,6 +15,8 @@ Route::get('/', 'ProductsController@index');
 Route::get('/detail/{product}', 'ProductsController@show');
 Route::get('/shopping-cart/{product}', 'ProductsController@show');
 
-Auth::routes();
+
 Route::get('/createmyaccount', 'AccountsController@create');
 
+Route::get('/account/login', 'AccountsController@index');
+Auth::routes();

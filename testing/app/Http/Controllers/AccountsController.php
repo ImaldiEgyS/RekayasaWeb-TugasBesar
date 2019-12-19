@@ -6,6 +6,8 @@ use App\Account;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller {
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -74,4 +76,6 @@ class AccountsController extends Controller {
     public function destroy(Account $account) {
         //
     }
+
+
 }

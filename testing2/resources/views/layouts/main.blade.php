@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/cards.css') }}">
     <link rel="stylesheet" href="{{ asset('css') }}/@yield('csstambahan')">
 
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+
 </head>
 <body>
     <!-- START NAV -->
@@ -17,7 +19,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{ url('/') }}">
-                    <img src="{{ asset('img/bulma.png') }}" alt="Logo">
+                    <!-- <img src="{{ asset('img/0 bulma.png') }}" alt="Logo"> -->
+                    Hefa Computer
                 </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                     <span></span>
@@ -76,6 +79,8 @@
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
 
 </body>
 </html>

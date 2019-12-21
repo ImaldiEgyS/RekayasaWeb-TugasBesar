@@ -37,7 +37,7 @@ background: #041221;
 /* Card start*/
 .card {overflow:hidden}
 .card.large {
-/* height: 510px; */
+height: 525px;
 -webkit-backface-visibility: hidden;
 backface-visibility: initial;
 border-radius: 5px;

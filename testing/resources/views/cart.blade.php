@@ -12,7 +12,7 @@
     </div>
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
-			<div class="container is-fluid has-text-centered card large ini_regis">
+			<div class="container is-fluid has-text-centered card large ini_regis is-scrollable">
                 <table id="cart" class="table table-hover table-condensed">
                     <thead>
                     <tr>
@@ -58,17 +58,13 @@
                         @endif
                     </tbody>
                     <tfoot>
-                    <tr class="visible-xs">
-                        <td class="text-center">
-                            Total Rp {{ number_format($total, 2, ',', '.') }}-
-                        </td>
-                    </tr>
                     <tr>
                         <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
                         <td class="hidden-xs text-center">
                             Total Rp {{ number_format($total, 2, ',', '.') }}-
                         </td>
+                        <td></td>
                     </tr>
                     </tfoot>
                 </table>

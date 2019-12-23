@@ -39,7 +39,7 @@
                         <button type="button" class="btn btn-info" data-toggle="dropdown">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                         </button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu ini_cartU">
                             <div class="row total-header-section">
                                 <div class="col-lg-6 col-sm-6 col-6">
                                     <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->

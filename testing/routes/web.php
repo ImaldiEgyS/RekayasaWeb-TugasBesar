@@ -18,6 +18,8 @@ Route::get('/detail/{product}', 'ProductsController@show');
 Route::patch('update-cart', 'ProductsController@update');
 Route::delete('remove-from-cart', 'ProductsController@remove');
 
+Route::resource('/admin', 'AdminController');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('admin/admin', 'HomeController@admin');

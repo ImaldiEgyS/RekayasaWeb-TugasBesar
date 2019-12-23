@@ -67,7 +67,9 @@
                                 @foreach(session('cart') as $id => $details)
                                     <div class="row cart-detail">
                                         <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                            <img src="{{ asset('img') }}/{{ $details['gambar'] }}">
+                                            <figure class="image is-square">
+                                                <img src="{{ asset('img') }}/{{ $details['gambar'] }}">
+                                            </figure>
                                         </div>
                                         <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                             <p>{{ $details['merek'] }}</p>
@@ -102,6 +104,11 @@
                                     <a id="navbarDropdown" class="navbar-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
+                                    @if (Auth::user()->usertype == 'admin')
+                                        <a class="dropdown-item" href="{{ url('/admin') }}">
+                                            Dashboard
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">

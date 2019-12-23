@@ -1,109 +1,99 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="{{ app()->getLocale() }}">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Laravel AJAX CRUD with Server Side Validation by IDStack">
+    <meta name="author" content="IDStack">
+    {{-- CSRF TOKEN --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}">
 
     <title>Dashboard Admin</title>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <!-- Bulma Version 0.8.x-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
-</head>
 
-<body>
-    <div class="container">
-        <div class="column">
-            <section class="hero is-info welcome is-small">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">Hello, Admin.</h1>
-                        <h2 class="subtitle">I hope you are having a great day!</h2>
-                    </div>
-                </div>
-            </section>
-            <section class="info-tiles">
-                <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">439k</p>
-                            <p class="subtitle">Users</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">59k</p>
-                            <p class="subtitle">Products</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">3.4k</p>
-                            <p class="subtitle">Open Orders</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">19</p>
-                            <p class="subtitle">Exceptions</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">Inventory Search</p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-large" type="text" placeholder="">
-                            <span class="icon is-medium is-left">
-                                <i class="fa fa-search"></i>
-                            </span>
-                            <span class="icon is-medium is-right">
-                                <i class="fa fa-check"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card events-card">
-                <header class="card-header">
-                    <p class="card-header-title">Events</p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </header>
-                <div class="card-table">
-                    <div class="content">
-                        <table class="table is-fullwidth is-striped">
-                            <tbody>
-                                <tr>
-                                    <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                    <td>Lorum ipsum dolem aire</td>
-                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>        
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Datatables -->
+    <link href="{{ asset('assets/vendor/datatables/datatables.min.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="{{ asset('assets/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ asset('assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets/css/navbar-fixed-top.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for laravel -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @stack('styles')
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{ asset('assets/js/ie-emulation-modes-warning.js') }}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Larajax</a>
         </div>
-    </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-    <script src="{{ asset('js/bulma.js') }}"></script>
-</body>
+    <div class="container">
 
+    @yield('content')
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- Datatables -->
+    <script src="{{ asset('assets/vendor/datatables/datatables.min.js') }}"></script>
+
+    <!-- Sweetalert2 -->
+    <script src="{{ asset('assets/vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ asset('assets/js/ie10-viewport-bug-workaround.js') }}"></script>SS
+    
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    @stack('scripts')
+  </body>
 </html>

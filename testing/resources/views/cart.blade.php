@@ -39,11 +39,16 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td data-th="Price">Rp {{ $details['harga'] }}</td>
+                                        
+                                        <td data-th="Price">
+                                            Rp {{ number_format($details['harga'], 2, ',', '.') }}-
+                                        </td>
                                         <td data-th="Quantity">
                                             <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
                                         </td>
-                                        <td data-th="Subtotal" class="text-center">Rp {{ $details['harga'] * $details['quantity'] }}</td>
+                                        <td data-th="Subtotal" class="text-center">
+                                        Rp {{ number_format($details['harga'] * $details['quantity'], 2, ',', '.') }}-
+                                        </td>
                                         <td class="actions" data-th="">
                                             <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
                                             <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
@@ -54,12 +59,16 @@
                     </tbody>
                     <tfoot>
                     <tr class="visible-xs">
-                        <td class="text-center">Total {{ $total }}</td>
+                        <td class="text-center">
+                            Total Rp {{ number_format($total, 2, ',', '.') }}-
+                        </td>
                     </tr>
                     <tr>
                         <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
-                        <td class="hidden-xs text-center">Total {{ $total }}</td>
+                        <td class="hidden-xs text-center">
+                            Total Rp {{ number_format($total, 2, ',', '.') }}-
+                        </td>
                     </tr>
                     </tfoot>
                 </table>

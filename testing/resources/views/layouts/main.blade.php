@@ -54,7 +54,12 @@
                                 @endforeach
         
                                 <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                                    <p>Total: <span class="text-info">Rp {{ $total }}</span></p>
+                                    <p>Total:
+                                        <br>
+                                        <span class="text-info">
+                                            Rp {{ number_format($total, 2, ',', '.') }}-
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
         
@@ -67,7 +72,9 @@
                                         <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                             <p>{{ $details['merek'] }}</p>
                                             <p>{{ $details['seri'] }}</p>
-                                            <p class="price text-info">Rp {{ $details['harga'] }}</p>
+                                            <p class="price text-info">
+                                                Rp {{ number_format($details['harga'], 2, ',', '.') }}-
+                                            </p>
                                             <span class="count"> Quantity:{{ $details['quantity'] }}</span>
                                         </div>
                                     </div>

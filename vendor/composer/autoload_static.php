@@ -15,9 +15,14 @@ class ComposerStaticInite72ea575f121e3242a7c962b42284970
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Y' => 
+        array (
+            'Yajra\\DataTables\\' => 17,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php73\\' => 23,
@@ -54,6 +59,7 @@ class ComposerStaticInite72ea575f121e3242a7c962b42284970
             'Illuminate\\Http\\' => 16,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
+            'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
@@ -69,6 +75,10 @@ class ComposerStaticInite72ea575f121e3242a7c962b42284970
     );
 
     public static $prefixDirsPsr4 = array (
+        'Yajra\\DataTables\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src',
+        ),
         'Symfony\\Polyfill\\Php73\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
@@ -180,6 +190,10 @@ class ComposerStaticInite72ea575f121e3242a7c962b42284970
         'Illuminate\\Events\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/events',
+        ),
+        'Illuminate\\Database\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/database',
         ),
         'Illuminate\\Contracts\\' => 
         array (

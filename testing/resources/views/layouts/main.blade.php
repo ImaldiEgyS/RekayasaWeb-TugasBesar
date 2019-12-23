@@ -109,9 +109,6 @@
         </div>
     </nav>
     <!-- END NAV -->
-    <!-- <div class="container page">
-    @yield('content')
-    </div> -->
  
     @yield('iniIsi')
     @yield('scripts')

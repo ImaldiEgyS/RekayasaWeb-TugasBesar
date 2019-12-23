@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts/main')
 
 @section('title', 'Detail')
 @section('iniIsi')
@@ -37,7 +37,7 @@
                                     Rp {{ number_format($product->harga, 2, ',', '.') }}-
                                 </div>
                                 <div class="column">
-                                    <a class="button is-medium is-info is-outlined">Add to Cart</a>
+                                    <a class="button is-medium is-info is-outlined" href="{{ url('add-to-cart/'.$product->id) }}">Add to Cart</a>
                                 </div>
                             </div>
                         </div>

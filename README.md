@@ -11,4 +11,3 @@ Nama Kelompok: Clover <br>
 Detail Folder:<br>
 - master: merupakan repository untuk versi akhir dari website yang dibuat dengan fitur dan coding laravel yang optimal
 - testing: merupakan repository untuk uji coba coding dan fitur pada website
-- verAwal: merupakan repository untuk website versi pertama, dimana fungsi laravel belum optimal dan uji coba untuk halaman admin

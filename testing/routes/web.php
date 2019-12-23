@@ -12,11 +12,20 @@
 */
 
 Route::get('/', 'ProductsController@index');
+Route::get('cart', 'ProductsController@cart');
+Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 Route::get('/detail/{product}', 'ProductsController@show');
-Route::get('/shopping-cart/{product}', 'ProductsController@show');
+Route::patch('update-cart', 'ProductsController@update');
+Route::delete('remove-from-cart', 'ProductsController@remove');
 
-
-Route::get('/createmyaccount', 'AccountsController@create');
-
-Route::get('/account/login', 'AccountsController@index');
 Auth::routes();
+Route::get('/home', 'HomeController@index');
+Route::get('admin/admin', 'HomeController@admin');
+
+//Admin
+Route::group(['middleware' => ['auth', 'admin']], function() {
+    Route::get('/admin', function() {
+        return view('admin/admin');
+    });
+});
+

@@ -1,5 +1,8 @@
 .hero.is-success {
-  background: #F2F6FA;
+  background: #041221;
+}
+.ini_regis {
+  padding: 30px;
 }
 .warnaku {
   color: black;
@@ -12,11 +15,4 @@
 }
 .field:not(:last-child) {
   margin-bottom: 20px;
-}
-@media screen and (min-width: 768px) {
-  .navbar {
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-  }
 }

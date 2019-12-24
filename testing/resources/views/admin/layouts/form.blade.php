@@ -57,6 +57,7 @@
                 <div class="form-group">
                     <label for="" class="control-label">Gambar</label>
                     {!! Form::text('gambar', null, ['class' => 'form-control', 'id' => 'gambar']) !!}
+                    <!-- {!! Form::file('gambar') !!} -->
                 </div>
             </td>
         </tr>

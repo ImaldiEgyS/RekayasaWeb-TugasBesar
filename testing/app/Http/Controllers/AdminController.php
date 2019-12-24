@@ -53,8 +53,9 @@ class AdminController extends Controller {
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin) {
-        //
+    public function show($id) {
+        $model = Admin::findOrFail($id);
+        return view('admin.layouts.show', compact('model'));
     }
 
     /**

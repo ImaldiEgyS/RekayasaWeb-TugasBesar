@@ -17,7 +17,7 @@ Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 Route::get('/detail/{product}', 'ProductsController@show');
 Route::patch('update-cart', 'ProductsController@update');
 Route::delete('remove-from-cart', 'ProductsController@remove');
-
+Route::get('/search', 'ProductsController');
 Route::resource('/admin', 'AdminController');
 Route::get('/admin/table/product', 'AdminController@dataTable')->name('table.product');
 

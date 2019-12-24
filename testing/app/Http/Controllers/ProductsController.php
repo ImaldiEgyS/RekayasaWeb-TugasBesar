@@ -161,5 +161,13 @@ class ProductsController extends Controller {
             session()->flash('success', 'Product removed successfully');
         }
     }
+    public function search(Request $request)
+    {
+        $query = $request->get('search');
+        $products = DB::table('products')->where('merek', 'like', '%' .$search. '%')->quantity
+
+        return view('index', compact('products'));
+    }
+}
 
 }

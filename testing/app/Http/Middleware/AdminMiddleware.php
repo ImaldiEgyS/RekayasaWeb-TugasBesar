@@ -20,7 +20,7 @@ class AdminMiddleware
         if(Auth::user()->usertype == 'admin') {
             return $next($request);
         } else {
-            return RouteServiceProvider::HOME;
+            return redirect('/');
         }
        
     }

@@ -1,6 +1,11 @@
-{!!
+<!-- {!!
     Form::model($model, ['route' => ['admin.store']])
-!!}
+!!} -->
+
+{!! Form::model($model, [
+    'route' => $model->exists ? ['admin.update', $model->id] : 'admin.store',
+    'method' => $model->exists ? 'PUT' : 'POST'
+]) !!}
 
     <table>
         <tr>

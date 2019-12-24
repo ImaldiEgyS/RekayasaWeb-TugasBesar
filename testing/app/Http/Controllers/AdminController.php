@@ -63,8 +63,13 @@ class AdminController extends Controller {
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin) {
-        //
+    // public function edit(Admin $admin) {
+    //     //
+    // }
+
+    public function edit($id) {
+        $model = Admin::findOrFail($id);
+        return view('admin.layouts.form', compact('model'));
     }
 
     /**
@@ -74,8 +79,19 @@ class AdminController extends Controller {
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin) {
-        //
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'merek' => 'required|string|max:255',
+            'seri' => 'required|string|max:255',
+            'socket' => 'required|string|max:255',
+            'spek' => 'string|max:255',
+            'gambar' => 'string|max:255',
+            'harga' => 'int',
+            'katalog' => 'required|string|max:255'
+        ]);
+        
+        $model = Admin::findOrFail($id);
+        $model->update($request->all());
     }
 
     /**
@@ -84,8 +100,9 @@ class AdminController extends Controller {
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin) {
-        //
+    public function destroy($id) {
+        $model = Admin::findOrFail($id);
+        $model->delete();
     }
 
     public function dataTable() {

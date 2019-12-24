@@ -163,8 +163,8 @@ class ProductsController extends Controller {
     }
     public function search(Request $request)
     {
-        $query = $request->get('search');
-        $products = DB::table('products')->where('merek', 'like', '%' .$search. '%')->quantity
+        $search= $request->get('search');
+        $products = DB::table('products')->where('cart', 'like', '%' .$search. '%')->paginate(8);
 
         return view('index', compact('products'));
     }

@@ -12,8 +12,11 @@
               <thead>
                   <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Email</th>
+                      <th>Gambar</th>
+                      <th>Merek</th>
+                      <th>Seri</th>
+                      <th>Katalog</th>
+                      <th>Harga</th>
                       <th></th>
                   </tr>
               </thead>
@@ -23,12 +26,37 @@
               <tfoot>
                   <tr>
                       <th>No</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th></th>
+                      <th>Gambar</th>
+                      <th>Merek</th>
+                      <th>Seri</th>
+                      <th>Katalog</th>
+                      <th>Harga</th>
+                      <th>Aksi</th>
                   </tr>
               </tfoot>
           </table>
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $('#datatable').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('table.product') }}",
+            columns: [
+                {data: 'DT_RowIndex', name: 'id'},
+                {data: 'gambar', name: 'gambar' , render: function(name) {
+                    return '<img src="{{ asset('img') }}/'+ name +'" style="height:100px;width:100px;">'
+                }},
+                {data: 'merek', name: 'merek'},
+                {data: 'seri', name: 'seri'},
+                {data: 'katalog', name: 'katalog'},
+                {data: 'harga', name: 'harga', render: $.fn.dataTable.render.number( ',', '.', 2, 'Rp ' )},
+                {data: 'action', name: 'action'}
+            ]
+        });
+    </script>
+@endpush

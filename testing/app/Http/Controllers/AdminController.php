@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Admin;
-use DataTable;
+use DataTables;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller {
@@ -74,5 +74,21 @@ class AdminController extends Controller {
      */
     public function destroy(Admin $admin) {
         //
+    }
+
+    public function dataTable() {
+        $model = Admin::query();
+        return DataTables::of($model)
+            ->addColumn('action',function($model) {
+                return view('admin.layouts._action', [
+                    'model' => $model,
+                    'url_show' => route('admin.show', $model['id']),
+                    'url_edit' => route('admin.edit', $model['id']),
+                    'url_destroy' => route('admin.destroy', $model['id']),
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['action'])
+            ->make(true);
     }
 }

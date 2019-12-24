@@ -1,3 +1,7 @@
+.ini_cartU {
+    height: 300px;
+    overflow-y: scroll;
+}
 .main-section{
     background-color: #F8F8F8;
 }

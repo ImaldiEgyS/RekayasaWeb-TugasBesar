@@ -19,6 +19,7 @@ Route::patch('update-cart', 'ProductsController@update');
 Route::delete('remove-from-cart', 'ProductsController@remove');
 
 Route::resource('/admin', 'AdminController');
+Route::get('/admin/table/product', 'AdminController@dataTable')->name('table.product');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');

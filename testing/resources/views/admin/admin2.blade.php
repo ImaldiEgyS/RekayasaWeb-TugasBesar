@@ -14,9 +14,6 @@
     <!-- Bulma Version 0.8.x-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}">
-    
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -57,53 +54,7 @@
                         </article>
                     </div>
                 </div>
-            </section>
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">Inventory Search</p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-large" type="text" placeholder="">
-                            <span class="icon is-medium is-left">
-                                <i class="fa fa-search"></i>
-                            </span>
-                            <span class="icon is-medium is-right">
-                                <i class="fa fa-check"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card events-card">
-                <header class="card-header">
-                    <p class="card-header-title">Events</p>
-                    <a href="#" class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </header>
-                <div class="card-table">
-                    <div class="content">
-                        <table class="table is-fullwidth is-striped">
-                            <tbody>
-                                <tr>
-                                    <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                    <td>Lorum ipsum dolem aire</td>
-                                    <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>        
+            </section>      
         </div>
     </div>
 

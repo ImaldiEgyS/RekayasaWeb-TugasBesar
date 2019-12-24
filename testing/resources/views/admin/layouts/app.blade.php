@@ -10,9 +10,9 @@
     {{-- CSRF TOKEN --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}">
+    <link rel="icon" href="{{ asset('assets/img/favico.ico') }}">
 
-    <title>Dashboard Admin</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -57,14 +57,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Larajax</a>
+          <a class="navbar-brand" href="{{ url('/admin') }}">Hefa Computer</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="{{ url('/admin') }}">Dashboard</a></li>
+            <li><a href="{{ url('/') }}">Halaman Utama</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+            <li><a>{{ Auth::user()->name }}</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

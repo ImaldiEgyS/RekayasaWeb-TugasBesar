@@ -18,7 +18,6 @@
                     </div>
                     <div class="control">
                         <a class="button is-info">Search</a>
-                        
                     </div>
                 </div>
             </div>

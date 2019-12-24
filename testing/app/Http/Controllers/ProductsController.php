@@ -161,6 +161,7 @@ class ProductsController extends Controller {
             session()->flash('success', 'Product removed successfully');
         }
     }
+
     public function search(Request $request)
     {
         $search= $request->get('search');
@@ -168,6 +169,4 @@ class ProductsController extends Controller {
 
         return view('index', compact('products'));
     }
-}
-
 }

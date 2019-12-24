@@ -22,7 +22,8 @@ class AdminController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        $model = new Admin;
+        return view('admin.layouts.form', compact('model'));
     }
 
     /**
@@ -32,7 +33,18 @@ class AdminController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        $this->validate($request, [
+            'merek' => 'required|string|max:255',
+            'seri' => 'required|string|max:255',
+            'socket' => 'required|string|max:255',
+            'spek' => 'string|max:255',
+            'gambar' => 'string|max:255',
+            'harga' => 'int',
+            'katalog' => 'required|string|max:255'
+        ]);
+        
+        $model = Admin::create($request->all());
+        return $model;
     }
 
     /**

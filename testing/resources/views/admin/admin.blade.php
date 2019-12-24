@@ -4,7 +4,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Datatable
-          <a href="" class="btn btn-success pull-right modal-show" style="margin-top: -8px;" title="Create User"><i class="icon-plus"></i> Create</a>
+          <a href="{{ route('admin.create') }}" class="btn btn-success pull-right modal-show" style="margin-top: -8px;" title="Add Products"><i class="icon-plus"></i> Add Products</a>
       </h3>
     </div>
     <div class="panel-body">
@@ -17,7 +17,7 @@
                       <th>Seri</th>
                       <th>Katalog</th>
                       <th>Harga</th>
-                      <th></th>
+                      <th>Aksi</th>
                   </tr>
               </thead>
               <tbody>

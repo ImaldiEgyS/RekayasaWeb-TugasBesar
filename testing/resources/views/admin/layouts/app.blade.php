@@ -77,6 +77,7 @@
 
     </div> <!-- /container -->
 
+    @include('admin.layouts._modal')
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

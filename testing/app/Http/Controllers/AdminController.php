@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Admin;
 use DataTables;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\File;
+// use Validator,Redirect,Response,File;
 
 class AdminController extends Controller {
     /**
@@ -24,6 +26,7 @@ class AdminController extends Controller {
     public function create() {
         $model = new Admin;
         return view('admin.layouts.form', compact('model'));
+        // return view('admin.layouts.formcreate', compact('model'));
     }
 
     /**
@@ -43,6 +46,25 @@ class AdminController extends Controller {
             'katalog' => 'required|string|max:255'
         ]);
         
+        // $this->validate($request, [
+        //     'gambar' => 'required|image',
+        // ]);
+        
+        // $photos = $request->file('gambar');
+        // $imageName = 'img.'.$photos->getClientOriginalExtension();
+        // $request->gambar->move(public_path('img'), $imageName);
+
+        // $model = new Admin();
+        // $model->merek = $request->merek;
+        // $model->seri = $request->seri;
+        // $model->socket = $request->socket;
+        // $model->spek = $request->spek;
+        // $model->gambar = $imageName;
+        // $model->harga = $request->harga;
+        // $model->katalog = $request->katalog;
+
+        // $model->save();
+
         $model = Admin::create($request->all());
         return $model;
     }
